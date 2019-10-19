@@ -1,2 +1,2 @@
-from .polls_views import PollDelete, PollUpdate, PollCreate,PollDetail,PollList, AnswerShow
+from .polls_views import PollDelete, PollUpdate, PollCreate,PollDetail,PollList, AnswerShow, AnswerStatistic
 from .choices_views import ChoicesCreate, ChoicesDelete, ChoicesDetail, ChoicesList, ChoicesUpdate

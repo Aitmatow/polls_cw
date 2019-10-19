@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}{{ object.name }}{% endblock %}
+{% block content %}
+   <div class="container">
+       <div class="card text-center">
+          <div class="card-header">
+            Опрос
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ poll.question }}</h5>
+          </div>
+       </div>
+   </div>
+    <div class="container">
+   <div class="card">
+          <div class="card-header text-center">
+            Статистика по выбору вариантов ответа:
+          </div>
+                  <div class="card">
+                  {% if choices.count == 0%}
+                  <h1 class="text-center">На данный опрос еще нет вариантов ответа</h1>
+                  {% else %}
+                    <ul class="list-group list-group-flush">
+                      {% for choice in all  %}
+                          <h5> {{ choice }} </h5>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                  </div>
+        </div>
+    </div>
+{% endblock %}

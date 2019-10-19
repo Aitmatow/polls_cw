@@ -55,5 +55,15 @@ class AnswerShow(View):
         ).save()
         return redirect('poll_view', pk=pk)
 
+class AnswerStatistic(View):
+    def get(self, request, pk):
+        poll = Poll.objects.get(pk=pk)
+        choices = Choice.objects.filter(poll=poll)
+        count = []
+        cur_count = Answer.objects.filter(poll=poll).count()
+        for i in Choice.objects.filter(poll=poll):
+            count.append(str(i) + "-" + str(Answer.objects.filter(poll=poll, choice=i).count()) + " (" + '{0:.2f}'.format(Answer.objects.filter(poll=poll, choice=i).count() / cur_count * 100)  + "%)" )
+        return render(request, 'poll/polls_statistic.html', {'poll' : poll, 'choices':choices, 'all' : count })
+
 
 

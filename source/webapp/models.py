@@ -24,4 +24,4 @@ class Answer(models.Model):
                              related_name='answers')
 
     def __str__(self):
-        return self.poll
+        return self.poll.question

@@ -25,6 +25,8 @@
     <div class="container text-center">
         <a href="{% url 'choices_new' object.pk %}"class="btn btn-info">Добавить новый вариант ответа></a>
         <a href="{% url 'poll_answer' object.pk %}"class="btn btn-info">Ответить на опрос></a>
+        <a href="{% url 'poll_statistic' object.pk %}"class="btn btn-info">Вывести статистику></a>
+
     </div>
     <div class="container">
    <div class="card text-center">
