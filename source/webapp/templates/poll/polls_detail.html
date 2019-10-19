@@ -20,5 +20,28 @@
           <div class="card-body">
             <h5 class="card-title">{{ object.question }}</h5>
           </div>
+       </div>
+   </div>
+    <div class="container text-center">
+        <a href="{% url 'choices_new' object.pk %}"class="btn btn-info">Добавить новый вариант ответа></a>
+    </div>
+    <div class="container">
+   <div class="card text-center">
+          <div class="card-header">
+            Варианты ответа к опросу:
+          </div>
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              {% for choice in object.choices.get_queryset  %}
+                  <li class="list-group-item">
+                      <div class="pre">{{ choice.text}}</div>
+                  <a href="{% url 'choices_edit' choice.pk %}" class="btn btn-info" style="width: 40px"><span class="fa fa-edit"></span></a>
+                  <a href="{% url 'choices_delete' choice.pk %}" class="btn btn-info" style="width: 40px"><span class="fa fa-trash"></span></a>
+                  </li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
+    </div>
+
 {% endblock %}

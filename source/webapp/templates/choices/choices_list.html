@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="bg-info text-white text-center">Ответы:</h1>
+    {% csrf_token %}
+    <div class="card-deck text-center">
+            {% for choice in object_list %}
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ choice.question }}</h5>
+                        <h5 class="card-title"> {{ choice.poll }}</h5>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">
+                      <a href="{% url 'choices_edit' poll.pk %}" class="btn btn-info" style="width: 40px"><span class="fa fa-edit"></span></a>
+                      <a href="{% url 'choices_delete' poll.pk %}" class="btn btn-info" style="width: 40px"><span class="fa fa-trash"></span></a>
+                      </small>
+                    </div>
+                  </div>
+            {% endfor %}
+    </div>
+{% endblock %}
+{% block scripts %}
+<a href="{% url 'poll_new' %}" class="button2" tabindex="0">+</a>
+{% endblock %}
