@@ -14,11 +14,11 @@
                     </div>
                     <div class="card-footer">
                       <small class="text-muted">
-                      <a href="{% url 'poll_statistic' poll.pk %}" class="btn btn-info" style="width: 40px"><span class="fa fa-question"></span> </a>
-                      <a href="{% url 'poll_answer' poll.pk %}" class="btn btn-info" style="width: 40px"><span class="fa fa-check"></span> </a>
-                      <a href="{% url 'poll_view' poll.pk %}" class="btn btn-info" style="width: 40px"><span class="fa fa-info"></span></a>
-                      <a href="{% url 'polls_edit' poll.pk %}" class="btn btn-info" style="width: 40px"><span class="fa fa-edit"></span></a>
-                      <a href="{% url 'poll_delete' poll.pk %}" class="btn btn-info" style="width: 40px"><span class="fa fa-trash"></span></a>
+                      <a href="{% url 'poll_statistic' poll.pk %}" class="btn btn-info " title="Статистика" style="width: 40px"><span class="fa fa-question"></span> </a>
+                      <a href="{% url 'poll_answer' poll.pk %}" class="btn btn-info" title="Ответить на опрос" style="width: 40px"><span class="fa fa-check"></span> </a>
+                      <a href="{% url 'poll_view' poll.pk %}" class="btn btn-info" title="Просмотр опроса" style="width: 40px"><span class="fa fa-info"></span></a>
+                      <a href="{% url 'polls_edit' poll.pk %}" class="btn btn-info" title="Редактирование опроса" style="width: 40px"><span class="fa fa-edit"></span></a>
+                      <a href="{% url 'poll_delete' poll.pk %}" class="btn btn-info" title="Удаление опроса" style="width: 40px"><span class="fa fa-trash"></span></a>
                       </small>
                     </div>
                   </div>
